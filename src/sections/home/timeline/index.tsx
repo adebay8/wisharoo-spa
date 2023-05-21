@@ -5,9 +5,9 @@ import classes from "./timeline.module.scss";
 const TimeLine = () => {
   const images = [...new Array(50).fill(0)].map((_, index) => ({
     id: index + 1,
-    url: `https://unsplash.it/700/${index % 2 == 0 ? 800 : 700}?image=${
-      index + 50
-    }`,
+    url: `https://source.unsplash.com/random/700x${
+      index % 2 == 0 ? 800 : 700
+    }?jewellery`,
   }));
 
   return (
