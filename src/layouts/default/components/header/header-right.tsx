@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const HeaderRight = () => {
@@ -186,9 +187,9 @@ const HeaderRight = () => {
                   className="PrimaryNav-userControlLink-JRN e2e-PrimaryNav-link-image"
                   aria-label="Onuchukwu Adebayo's profile"
                 >
-                  <img
+                  <Image
                     className="PrimaryNav-avatarImgEl-WDU"
-                    alt=""
+                    alt="avatar"
                     src="https://a5.behance.net/7d47bb00768e21075a1fc05ad2ecc54989522bb6/img/profile/avatars/pen-100.png?cb=264615658"
                   />
                 </div>

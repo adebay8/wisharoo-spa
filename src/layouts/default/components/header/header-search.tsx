@@ -56,7 +56,6 @@ const HeaderSearch = () => {
                   tabIndex={0}
                   aria-label="Search Behance"
                   aria-controls="34e572d4-5826-4a7f-a9be-97928beacf3c"
-                  aria-expanded="false"
                   onFocus={() => setInputFocused(true)}
                 />
               </label>

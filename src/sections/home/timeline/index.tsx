@@ -21,6 +21,7 @@ const TimeLine = () => {
             key={i}
             src={image.url}
             style={{ width: "100%", display: "block", borderRadius: "14px" }}
+            alt="Image"
           />
         ))}
       </Masonry>

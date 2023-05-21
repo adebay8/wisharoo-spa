@@ -13,7 +13,7 @@ const nextConfig = {
       },
       {
         protocol:"https",
-        hostname:"unsplash.com",
+        hostname:"source.unsplash.com",
       }
     ]
   }
