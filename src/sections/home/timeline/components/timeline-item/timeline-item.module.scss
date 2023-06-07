@@ -1,0 +1,99 @@
+.timelineItem {
+  &Wrapper {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+
+    .playContainer {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: 100px;
+      background: linear-gradient(
+        180deg,
+        rgba(22, 24, 35, 0.0001) 2.92%,
+        rgba(22, 24, 35, 0.5) 98.99%
+      );
+      padding: 67px 12px 12px;
+
+      .styledPlay {
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+
+      .videoCount {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+  }
+
+  &Media {
+    width: 100%;
+    display: block;
+  }
+
+  &BottomInfo {
+    font-weight: 300;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    .metaCaptionLine {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-clamp: 2px;
+      box-orient: vertical;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin-top: 4px;
+      word-break: break-word;
+      cursor: pointer;
+
+      .container {
+        font-size: 14px;
+        line-height: 22px;
+        word-break: break-word;
+        height: 44px;
+        overflow: hidden;
+      }
+    }
+
+    .playline {
+      color: rgba(22, 24, 35, 0.75);
+      font-size: 14px;
+      line-height: 22px;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-top: 8px;
+
+      .playIcon {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        font-size: 20px;
+        color: rgba(22, 24, 35, 0.6);
+        cursor: pointer;
+      }
+    }
+  }
+}

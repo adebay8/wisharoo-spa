@@ -5,6 +5,7 @@ import { useLazyQuery } from "@apollo/client";
 import { GET_TIMELINE } from "./query";
 import { TimelineItemType } from "@/gql/graphql";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { TimelineItem } from "./components";
 
 const TimeLine = () => {
   const [nextPage, setNextPage] = useState<number>(1);
@@ -43,20 +44,15 @@ const TimeLine = () => {
       loader={<h4>Loading...</h4>}
     >
       <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 700: 3, 1024: 4 }}
+        columnsCountBreakPoints={{ 350: 2, 700: 3, 1024: 4 }}
         className={classes.masonry}
       >
         <Masonry gutter="14px">
           {timelineItems.map((timeline: any, i: number) => (
-            <img
+            <TimelineItem
               key={i}
-              src={timeline.imageUrl}
-              style={{
-                width: "100%",
-                display: "block",
-                borderRadius: "14px",
-              }}
-              alt={timeline.description}
+              mediaUrl={timeline.imageUrl}
+              description={timeline.description}
             />
           ))}
         </Masonry>
