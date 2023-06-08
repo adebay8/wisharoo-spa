@@ -1,0 +1,61 @@
+.arrowContainer {
+  position: absolute;
+  z-index: 1;
+  top: 28px;
+  cursor: pointer;
+  left: 10px;
+
+  &.right {
+    right: 10px;
+    left: unset;
+  }
+
+  .arrowIconContainer {
+    position: absolute;
+    z-index: 1;
+    top: 4px;
+    width: 32px;
+    height: 32px;
+    padding-top: 8px;
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+    font-size: 16px;
+    color: rgba(22, 24, 35, 0.6);
+    left: 4px;
+    padding-left: 11px;
+
+    &.right {
+      box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
+      right: 4px;
+      padding-left: 5px;
+      left: unset;
+    }
+  }
+
+  .shadow {
+    position: absolute;
+    top: 0px;
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(
+      270.11deg,
+      rgb(255, 255, 255) 0.09%,
+      rgba(255, 255, 255, 0) 100.83%
+    );
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    left: 0px;
+    display: none;
+
+    &.right {
+      transform: unset;
+      right: 0px;
+      left: unset;
+    }
+  }
+
+  .transform {
+    display: inline-block;
+    transform: rotateY(180deg);
+  }
+}

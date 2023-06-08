@@ -53,10 +53,23 @@
       }
     }
 
+    &Text {
+      @media (max-width: 1079px) {
+        display: none;
+      }
+    }
+
     &Link {
       align-items: center;
       display: flex;
       height: 100%;
+
+      &.active {
+        &::after {
+          opacity: 1;
+          transform: translateY(-100%);
+        }
+      }
 
       &::after {
         background-color: #191919;
@@ -87,6 +100,10 @@
   &Full {
     height: 16px;
     width: 82px;
+
+    @media (max-width: 1079px) {
+      display: none;
+    }
   }
 
   &Truncated {
@@ -106,6 +123,10 @@
     padding-left: 32px;
     padding-right: 32px;
     width: 100%;
+
+    @media (max-width: 1079px) {
+      display: none;
+    }
   }
 }
 
@@ -355,12 +376,60 @@
     // pointer-events: none;
     position: fixed;
     top: 0;
-    transition: opacity 0.15s linear;
+    transition: all 0.15s linear;
     width: 100%;
     z-index: -1;
+    visibility: hidden;
 
     &.active {
       opacity: 0.5;
+      visibility: visible;
+    }
+  }
+}
+
+.hamburgerMenuButtonWrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  margin-top: 1px;
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: 1080px) {
+    display: none;
+  }
+
+  .hamburgerButton {
+    appearance: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+    padding-right: 16px;
+    padding-top: 20px;
+
+    @media (max-width: 1079px) {
+      padding-left: 16px;
+    }
+
+    .hamburger {
+      width: 15px;
+
+      &Line {
+        background-color: #191919;
+        height: 2px;
+        margin-bottom: 3px;
+        transition-duration: 0.25s;
+        transition-property: transform, opacity;
+        transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+      }
     }
   }
 }
