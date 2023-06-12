@@ -1,0 +1,50 @@
+.primaryNavSignup {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.popoverRoot {
+  width: inherit;
+}
+
+.popoverActivator {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: inherit;
+  z-index: 3;
+}
+
+.button {
+  border: 1px solid transparent;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+  transition-duration: 300ms;
+  transition-property: color, background, border;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background: #fff;
+  border-color: #e8e8e8;
+  color: #191919;
+  min-width: 120px;
+}
+
+.labelWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 8px 18px;
+}
+
+.label {
+  border: 1px solid transparent;
+  display: inline-block;
+  max-width: 100%;
+  font-size: 14px;
+}

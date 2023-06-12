@@ -18,6 +18,33 @@
     // @media screen and (min-width: 904px) and (max-width: 1271px) {
     //   max-width: 880px;
     // }
+
+    &::before,
+    &::after {
+      bottom: 0;
+      content: "";
+      display: block;
+      opacity: 1;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      transition: opacity 0.2s ease-in-out;
+      // z-index: 1;
+
+      @media (min-width: 768px) {
+        width: 200px;
+      }
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(270deg, #fff0 0, #fff 90%, #fff);
+    }
+
+    &::after {
+      background: linear-gradient(90deg, #fff0 0, #fff 90%, #fff);
+      right: 0;
+    }
   }
 
   &Container {

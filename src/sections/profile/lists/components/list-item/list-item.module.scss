@@ -1,0 +1,141 @@
+.listItem,
+.listItemLink {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.thumbnailsContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+    border-radius: 8px;
+    opacity: 0;
+    background: #fff;
+  }
+
+  .thumbnailsContent {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    .listImage {
+      position: relative;
+      width: 100%;
+      background-color: #e7e7e9;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 8px;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(transparent),
+          color-stop(8.1%, transparent),
+          color-stop(15.5%, rgba(0, 0, 0, 0.001)),
+          color-stop(22.5%, rgba(0, 0, 0, 0.003)),
+          color-stop(29%, rgba(0, 0, 0, 0.005)),
+          color-stop(35.3%, rgba(0, 0, 0, 0.008)),
+          color-stop(41.2%, rgba(0, 0, 0, 0.011)),
+          color-stop(47.1%, rgba(0, 0, 0, 0.014)),
+          color-stop(52.9%, rgba(0, 0, 0, 0.016)),
+          color-stop(58.8%, rgba(0, 0, 0, 0.019)),
+          color-stop(64.7%, rgba(0, 0, 0, 0.022)),
+          color-stop(71%, rgba(0, 0, 0, 0.025)),
+          color-stop(77.5%, rgba(0, 0, 0, 0.027)),
+          color-stop(84.5%, rgba(0, 0, 0, 0.029)),
+          color-stop(91.9%, rgba(0, 0, 0, 0.03)),
+          to(rgba(0, 0, 0, 0.03))
+        );
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          transparent 8.1%,
+          rgba(0, 0, 0, 0.001) 15.5%,
+          rgba(0, 0, 0, 0.003) 22.5%,
+          rgba(0, 0, 0, 0.005) 29%,
+          rgba(0, 0, 0, 0.008) 35.3%,
+          rgba(0, 0, 0, 0.011) 41.2%,
+          rgba(0, 0, 0, 0.014) 47.1%,
+          rgba(0, 0, 0, 0.016) 52.9%,
+          rgba(0, 0, 0, 0.019) 58.8%,
+          rgba(0, 0, 0, 0.022) 64.7%,
+          rgba(0, 0, 0, 0.025) 71%,
+          rgba(0, 0, 0, 0.027) 77.5%,
+          rgba(0, 0, 0, 0.029) 84.5%,
+          rgba(0, 0, 0, 0.03) 91.9%,
+          rgba(0, 0, 0, 0.03) 100%
+        );
+        pointer-events: none;
+      }
+
+      &.mainImage {
+        height: 75%;
+        border-radius: 8px 8px 0 0;
+      }
+
+      &.otherListImage:first-child {
+        border-radius: 0 0 0 8px;
+      }
+
+      &.otherListImage:not(:first-child) {
+        margin-left: 4px;
+      }
+
+      &.otherListImage:last-child {
+        border-radius: 0 0 8px;
+      }
+    }
+
+    .otherListImagesContainer {
+      display: -ms-flexbox;
+      display: flex;
+      height: 25%;
+      margin-top: 4px;
+    }
+  }
+}
+
+.listsDescriptionContainer {
+  margin-top: 16px;
+  text-align: center;
+
+  .listName {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    display: inline-block;
+    -webkit-transition: border-bottom 300ms ease;
+    transition: border-bottom 300ms ease;
+    border-bottom: 1px solid transparent;
+    color: #0d0c22;
+  }
+}

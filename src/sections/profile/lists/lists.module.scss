@@ -1,0 +1,32 @@
+.section {
+  width: auto;
+  max-width: none;
+  float: none;
+  padding: 30px 0;
+  margin-top: 10px;
+}
+
+.containerLarge {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @media (min-width: 768px) {
+    max-width: 1680px;
+  }
+
+  @media (min-width: 768px) {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .listsGrid {
+    display: grid;
+    grid-gap: 48px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    list-style: none;
+  }
+}
