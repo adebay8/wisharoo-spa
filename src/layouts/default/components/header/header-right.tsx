@@ -1,8 +1,14 @@
-import Image from "next/image";
 import React from "react";
 import classes from "./header-right.module.scss";
+import { actionSetModalItem, useAppContext } from "@/store";
+import dynamic from "next/dynamic";
+
+const Modal = dynamic(() => import("@/components/modal"), {
+  ssr: false,
+});
 
 const HeaderRight = () => {
+  const [{ modal }, dispatch] = useAppContext();
   return (
     <>
       <div className={classes.primaryNavSignup}>
@@ -11,7 +17,16 @@ const HeaderRight = () => {
             aria-describedby="82cb8546-3296-4099-a124-8543cc45e074"
             className={classes.popoverActivator}
           >
-            <button className={classes.button} type="button" role="button">
+            <button
+              className={classes.button}
+              type="button"
+              role="button"
+              onClick={() =>
+                dispatch(
+                  actionSetModalItem({ name: "createList", value: true })
+                )
+              }
+            >
               <div className={classes.labelWrapper}>
                 <div className={classes.label}>Create list</div>
               </div>
@@ -19,6 +34,14 @@ const HeaderRight = () => {
           </div>
         </div>
       </div>
+      <Modal
+        showModal={modal.createList}
+        setModalState={(state) =>
+          dispatch(actionSetModalItem({ name: "createList", value: state }))
+        }
+      >
+        {/* <WaitListForm /> */}
+      </Modal>
       {/* <div className="PrimaryNav-searchLink-xVd">
         <a
           className="PrimaryNav-link-hxX e2e-PrimaryNav-search"
