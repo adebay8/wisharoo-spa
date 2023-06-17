@@ -69,10 +69,14 @@
           opacity: 1;
           transform: translateY(-100%);
         }
+
+        & > .primaryNavCoreNavigationLabel {
+          color: #753ff6;
+        }
       }
 
       &::after {
-        background-color: #191919;
+        background-color: #753ff6;
         content: "";
         height: 2px;
         left: 0;

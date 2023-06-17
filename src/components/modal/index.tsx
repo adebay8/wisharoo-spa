@@ -49,7 +49,7 @@ const Modal: React.FC<ModalProps> = ({
                         height={40}
                         rx={20}
                         fill="rgba(24, 24, 24, 0.3)"
-                        stroke="#2C2C2C"
+                        // stroke="#fff"
                       />
                       <path
                         d="M25.9968 14.0051L14.0068 25.9951"

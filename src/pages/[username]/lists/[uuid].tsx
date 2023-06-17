@@ -1,12 +1,9 @@
 import { DefaultLayout } from "@/layouts";
+import { List } from "@/sections";
 import React from "react";
 
 const ListDetails = () => {
-  return (
-    <DefaultLayout>
-      <></>
-    </DefaultLayout>
-  );
+  return <List />;
 };
 
 export default ListDetails;

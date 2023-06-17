@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./header-right.module.scss";
 import { actionSetModalItem, useAppContext } from "@/store";
 import dynamic from "next/dynamic";
+import { CreateList } from "@/components";
 
 const Modal = dynamic(() => import("@/components/modal"), {
   ssr: false,
@@ -40,7 +41,7 @@ const HeaderRight = () => {
           dispatch(actionSetModalItem({ name: "createList", value: state }))
         }
       >
-        {/* <WaitListForm /> */}
+        <CreateList />
       </Modal>
       {/* <div className="PrimaryNav-searchLink-xVd">
         <a

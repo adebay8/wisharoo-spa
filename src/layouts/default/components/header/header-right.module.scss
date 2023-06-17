@@ -18,20 +18,17 @@
 }
 
 .button {
-  border: 1px solid transparent;
-  border-radius: 100px;
+  border: 1px solid #753ff6;
+  background: #753ff6;
+  border-radius: 4px;
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
   line-height: 1;
   transition-duration: 300ms;
   transition-property: color, background, border;
-  -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
-  background: #fff;
-  border-color: #e8e8e8;
-  color: #191919;
+  color: #fff;
   min-width: 120px;
 }
 

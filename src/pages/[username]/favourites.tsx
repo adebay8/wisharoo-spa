@@ -1,7 +1,7 @@
 import { ProfileLayout } from "@/layouts";
 import React from "react";
 
-const ListCollections = () => {
+const ListFavourites = () => {
   return (
     <ProfileLayout>
       <></>
@@ -9,4 +9,4 @@ const ListCollections = () => {
   );
 };
 
-export default ListCollections;
+export default ListFavourites;
