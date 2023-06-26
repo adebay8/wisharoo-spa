@@ -3,6 +3,7 @@ import DefaultLayout from "../default";
 import { useRouter } from "next/router";
 import { Tabs } from "@/components";
 import { ProfileLayoutProps } from "./types";
+import ProfileDetails from "./components/profile-details";
 
 const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children }) => {
   const { query } = useRouter();
@@ -55,6 +56,7 @@ const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children }) => {
 
   return (
     <DefaultLayout>
+      <ProfileDetails />
       <Tabs tabs={tabs} />
       {children}
     </DefaultLayout>

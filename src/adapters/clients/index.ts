@@ -1,1 +1,1 @@
-export { default as GraphQLClient } from "./graphql/client";
+export { default as GraphQLClient } from "./graphql";
