@@ -47,7 +47,7 @@ const ProfileDetails = () => {
             </div>
             <div className={classes.profileDetailsBottom}>
               <div className={classes.profileDescription}>
-                Discover my favorite things, dreams, and wishes. Let's turn
+                Discover my favorite things, dreams, and wishes. Let&#39;s turn
                 imagination into reality together.
               </div>
               <Link href="https://ponnle.xyz" target="_blank">
