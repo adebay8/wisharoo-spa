@@ -87,22 +87,22 @@ const HeaderSearch = () => {
                     </span>
                     <ul>
                       <li className={classes.suggestion}>
-                        <a
+                        <Link
                           className={classes.suggestionLink}
                           href="/search/projects?search=landing+page&amp;tracking_source=typeahead_nav_suggested_term"
                           tabIndex={-1}
                         >
                           accessories
-                        </a>
+                        </Link>
                       </li>
                       <li className={classes.suggestion}>
-                        <a
+                        <Link
                           className={classes.suggestionLink}
                           href="/search/projects?search=typography&amp;tracking_source=typeahead_nav_suggested_term"
                           tabIndex={-1}
                         >
                           sportswear
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>
