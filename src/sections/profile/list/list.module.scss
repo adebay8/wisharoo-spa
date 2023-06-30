@@ -1,0 +1,52 @@
+.listPageContainer {
+  display: flex;
+
+  .listPageWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    pointer-events: all;
+    visibility: initial;
+    transition: opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 0s;
+
+    .imageCarouselContainer {
+      position: fixed;
+      inset: 0px;
+
+      .imageCarouselWrapper {
+        position: relative;
+        height: 100%;
+        width: 61%;
+      }
+    }
+
+    .listItemsContainer {
+      width: 39%;
+      transition: background 500ms cubic-bezier(0.23, 1, 0.32, 1) 0s,
+        background-color 500ms cubic-bezier(0.23, 1, 0.32, 1) 0s;
+      position: static;
+      margin-left: auto;
+      z-index: 1;
+
+      .listItemsWrapper {
+        display: grid;
+        grid-gap: 36px;
+        grid-template-columns: minmax(270px, 1fr);
+        list-style: none;
+        margin: 0 auto;
+        position: relative;
+        grid-gap: 48px;
+        margin: 0 auto;
+        padding: 20px;
+
+        @media (min-width: 768px) {
+          padding: 32px 15%;
+        }
+
+        @media (min-width: 768px) {
+          max-width: 1680px;
+        }
+      }
+    }
+  }
+}

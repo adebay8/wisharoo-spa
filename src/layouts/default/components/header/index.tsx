@@ -3,6 +3,7 @@ import classes from "./header.module.scss";
 import HeaderLeft from "./header-left";
 import HeaderSearch from "./header-search";
 import Hamburger from "./hamburger";
+import HeaderRight from "./header-right";
 
 const Header = () => {
   return (
@@ -14,6 +15,7 @@ const Header = () => {
             <Hamburger />
             <HeaderLeft />
             <HeaderSearch />
+            <HeaderRight />
           </div>
         </div>
         {/**/}

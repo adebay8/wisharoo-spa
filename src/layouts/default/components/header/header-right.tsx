@@ -1,36 +1,51 @@
-import Image from "next/image";
 import React from "react";
+import classes from "./header-right.module.scss";
+import { actionSetModalItem, useAppContext } from "@/store";
+import dynamic from "next/dynamic";
+import { CreateList } from "@/components";
+import cx from "classnames";
+import Link from "next/link";
+
+const Modal = dynamic(() => import("@/components/modal"), {
+  ssr: false,
+});
 
 const HeaderRight = () => {
+  const [{ modal }, dispatch] = useAppContext();
   return (
     <>
-      <div className="PrimaryNav-signup-XIt">
-        {/**/}
-        <div className="Popover-root-bHp" aria-haspopup="true">
+      <div className={classes.primaryNavSignup}>
+        <div className={classes.popoverRoot} aria-haspopup="true">
           <div
             aria-describedby="82cb8546-3296-4099-a124-8543cc45e074"
-            className="Popover-activator-M8N"
+            className={classes.popoverActivator}
           >
-            {/*[*/}
             <button
-              className="Btn-button-CqT Btn-base-L7P Btn-normal-If5 e2e-Create-Project PrimaryNav-shareYourWork-YBv"
+              className={classes.button}
               type="button"
               role="button"
+              onClick={() =>
+                dispatch(
+                  actionSetModalItem({ name: "createList", value: true })
+                )
+              }
             >
-              <div className="Btn-labelWrapper-_Re">
-                {/**/}
-                <div className="Btn-label-QJi e2e-Btn-label">
-                  {/*[*/}Share Your Work{/*]*/}
-                </div>
-                {/**/}
+              <div className={classes.labelWrapper}>
+                <div className={classes.label}>Create list</div>
               </div>
             </button>
-            {/*]*/}
           </div>
         </div>
-        {/**/}
       </div>
-      <div className="PrimaryNav-searchLink-xVd">
+      <Modal
+        showModal={modal.createList}
+        setModalState={(state) =>
+          dispatch(actionSetModalItem({ name: "createList", value: state }))
+        }
+      >
+        <CreateList />
+      </Modal>
+      {/* <div className="PrimaryNav-searchLink-xVd">
         <a
           className="PrimaryNav-link-hxX e2e-PrimaryNav-search"
           href="/search/projects?tracking_source=nav20"
@@ -50,70 +65,37 @@ const HeaderRight = () => {
               magnifying glass
             </desc>
             <g>
-              {/*[*/}
               <path d="M11.407,10.421,8.818,7.832a4.276,4.276,0,1,0-.985.985l2.589,2.589a.7.7,0,0,0,.985-.985ZM2.355,5.352a3,3,0,1,1,3,3,3,3,0,0,1-3-3Z" />
-              {/*]*/}
             </g>
           </svg>
         </a>
       </div>
-      <ul className="PrimaryNav-userControls-GbX">
-        <div
-          className="Popover-root-bHp PrimaryNav-userControl-LdV"
-          aria-haspopup="true"
-        >
+      */}
+      <ul className={classes.userControls}>
+        <div className={classes.userControl}>
           <div
             aria-describedby="eb719c6a-2842-4c4e-9d13-51ea865e5e9c"
-            className="Popover-activator-M8N"
+            className={classes.activator}
           >
-            {/*[*/}
-            <li className="PrimaryNav-userControl-LdV PrimaryNav-inboxActivator-e2X PrimaryNav-mail-gX_ e2e-NotificationBadge--email">
-              <button
-                className="PrimaryNav-link-hxX PrimaryNav-userControlLink-JRN"
-                tabIndex={0}
-                aria-label="Messages"
-              >
-                <svg
-                  viewBox="0 0 18 18"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="PrimaryNav-icon-r_P"
-                >
+            <li className={classes.mail}>
+              <button className={classes.controlLink}>
+                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9,10.094l9-6.7615v-.75A.5735.5735,0,0,0,17.4375,2H.5625A.57351.57351,0,0,0,0,2.5835V3.318Z" />
                   <polygon points="12.389 8.981 18 13.184 18 6.667 18 4.771" />
                   <path d="M11.433,9.7,9.645,11.047a1.086,1.086,0,0,1-1.29,0L6.541,9.6875,0,14.534v.883A.573.573,0,0,0,.5625,16h16.875A.573.573,0,0,0,18,15.417v-.795Z" />
                   <polygon points="5.582 8.969 0 4.756 0 6.667 0 13.097" />
                 </svg>
               </button>
-              {/**/}
             </li>
-            {/*]*/}
           </div>
         </div>
-        <div
-          className="Popover-root-bHp PrimaryNav-notificationsPopoverRoot-Uv7"
-          aria-haspopup="true"
-        >
-          <div
-            aria-describedby="73386517-5b8e-43b4-a700-6954adb5a4ba"
-            className="Popover-activator-M8N PrimaryNav-notificationsPopoverActivator-oUr"
-          >
-            {/*[*/}
-            <div className="NotificationsMenu-root-YjN">
-              <div
-                className="Popover-root-bHp NotificationsMenu-notificationsDesktop-vbh"
-                aria-haspopup="true"
-              >
-                <div
-                  aria-describedby="91d0107e-06df-4929-837c-b5f8a912db7a"
-                  className="Popover-activator-M8N"
-                >
-                  {/*[*/}
-                  {/*[*/}
-                  <li className="PrimaryNav-userControl-LdV PrimaryNav-notifications-DqR e2e-NotificationBadge--notification">
-                    <button
-                      className="PrimaryNav-link-hxX PrimaryNav-userControlLink-JRN"
-                      aria-label="Notifications"
-                    >
+        <div className={classes.notificationPopover}>
+          <div className={classes.activator}>
+            <div className={classes.menu}>
+              <div className={classes.notificationsDesktop}>
+                <div className={classes.popoverActivator}>
+                  <li className={classes.userControl}>
+                    <button className={classes.userControlLink}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={13}
@@ -130,14 +112,10 @@ const HeaderRight = () => {
                         </g>
                       </svg>
                     </button>
-                    {/**/}
                   </li>
-                  {/*]*/}
-                  {/*]*/}
                 </div>
               </div>
-              <div className="NotificationsMenu-notificationsMobile-kcE">
-                {/*[*/}
+              {/* <div className="NotificationsMenu-notificationsMobile-kcE">
                 <li className="PrimaryNav-userControl-LdV PrimaryNav-notifications-DqR e2e-NotificationBadge--notification">
                   <button
                     className="PrimaryNav-link-hxX PrimaryNav-userControlLink-JRN"
@@ -159,43 +137,29 @@ const HeaderRight = () => {
                       </g>
                     </svg>
                   </button>
-                  {/**/}
                 </li>
-                {/*]*/}
-                {/**/}
-              </div>
+              </div> */}
             </div>
-            {/**/}
-            {/*]*/}
           </div>
-          <div>
-            {/**/}
-            {/**/}
-          </div>
+          <div></div>
         </div>
-        <li className="PrimaryNav-userControl-LdV PrimaryNav-me-apm e2e-PrimaryNav-me">
-          <div className="Popover-root-bHp" aria-haspopup="true">
-            <div
-              aria-describedby="50268a75-e57f-4032-873c-f802cb99643e"
-              className="Popover-activator-M8N"
-            >
-              {/*[*/}
-              <div className="PrimaryNav-userAvatarTrigger-Q_2">
+        <li className={cx(classes.userControl, classes.profile)}>
+          <div className={classes.popoverRoot}>
+            <Link className={classes.activator} href="/oluwaponnle">
+              <div className={classes.avatarTrigger}>
                 <div
                   role="link"
                   tabIndex={0}
                   className="PrimaryNav-userControlLink-JRN e2e-PrimaryNav-link-image"
-                  aria-label="Onuchukwu Adebayo's profile"
                 >
-                  <Image
+                  <img
                     className="PrimaryNav-avatarImgEl-WDU"
                     alt="avatar"
-                    src="https://a5.behance.net/7d47bb00768e21075a1fc05ad2ecc54989522bb6/img/profile/avatars/pen-100.png?cb=264615658"
+                    src="https://picsum.photos/200"
                   />
                 </div>
               </div>
-              {/*]*/}
-            </div>
+            </Link>
           </div>
         </li>
       </ul>
