@@ -15,7 +15,7 @@ const List = () => {
                 inset: 0,
                 height: "100vh",
                 backgroundImage:
-                  'url("https://images.unsplash.com/photo-1636553184309-2029fb2495d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80")',
+                  'url("https://images.unsplash.com/photo-1633358561379-4bbd7a98236c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80")',
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
                 backgroundRepeat: "no-repeat",

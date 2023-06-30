@@ -4,6 +4,7 @@ import { actionSetModalItem, useAppContext } from "@/store";
 import dynamic from "next/dynamic";
 import { CreateList } from "@/components";
 import cx from "classnames";
+import Link from "next/link";
 
 const Modal = dynamic(() => import("@/components/modal"), {
   ssr: false,
@@ -144,7 +145,7 @@ const HeaderRight = () => {
         </div>
         <li className={cx(classes.userControl, classes.profile)}>
           <div className={classes.popoverRoot}>
-            <div className={classes.activator}>
+            <Link className={classes.activator} href="/oluwaponnle">
               <div className={classes.avatarTrigger}>
                 <div
                   role="link"
@@ -158,7 +159,7 @@ const HeaderRight = () => {
                   />
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </li>
       </ul>

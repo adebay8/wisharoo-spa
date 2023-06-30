@@ -6,12 +6,13 @@
   margin-right: 20px;
   margin-top: 30px;
   max-width: 100%;
-  overflow: scroll;
+  overflow: hidden;
+  overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
 
   @media (min-width: 604px) {
-    height: 48px;
+    height: 49px;
     justify-content: initial;
     padding-top: 5px;
   }

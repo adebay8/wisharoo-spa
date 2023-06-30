@@ -1,18 +1,17 @@
 import React from "react";
+import classes from "./profile-details.module.scss";
+import Link from "next/link";
 
 const ProfileDetails = () => {
   return (
-    <div className="NHxs4 bYpwS U8eXG M5vdR">
-      <div className="JuCaV">
-        <div className="MyspJ">
-          <div className="LFgvH">
-            <div className="WcgCR">
-              <div className="sRm3U">
+    <div className={classes.profileContainer}>
+      <div className={classes.profileWrapper}>
+        <div className={classes.profilePhotoContainer}>
+          <div className={classes.profilePhotoWrapper}>
+            <div className={classes.profilePhoto}>
+              <div className={classes.relative}>
                 <img
-                  className="D1hjc ANqxe"
-                  loading="lazy"
-                  srcSet="https://images.unsplash.com/placeholder-avatars/extra-large.jpg?dpr=1&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff 1x, https://images.unsplash.com/placeholder-avatars/extra-large.jpg?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff 2x"
-                  src="https://images.unsplash.com/placeholder-avatars/extra-large.jpg?auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff"
+                  src="https://picsum.photos/200"
                   role="presentation"
                   alt="Avatar of user Onuchukwu Adebayo"
                   width={150}
@@ -22,13 +21,13 @@ const ProfileDetails = () => {
             </div>
           </div>
         </div>
-        <div className="CrIdD">
-          <div className="l4LOF">
-            <div className="iqGFX">
-              <div className="dJnu9 CjK9V Fu4vG">Onuchukwu Adebayo</div>
-              <div className="AW1O4">
+        <div className={classes.profileDetailsContainer}>
+          <div className={classes.profileDetailsWrapper}>
+            <div className={classes.profileDetailsTop}>
+              <div className={classes.profileName}>Onuchukwu Adebayo</div>
+              <div className={classes.editProfileContainer}>
                 <a
-                  className="Z1oo6 CwMIr DQBsa p1cWU jpBZ0 EzsBC KHq0c Olora I0aPD dEcXu"
+                  className={classes.editProfileLink}
                   href="https://unsplash.com/account"
                 >
                   <svg
@@ -46,12 +45,17 @@ const ProfileDetails = () => {
                 </a>
               </div>
             </div>
-            <div className="lrejT">
-              <div className="SfHrT">
-                Download free, beautiful high-quality photos curated by
-                Onuchukwu.
+            <div className={classes.profileDetailsBottom}>
+              <div className={classes.profileDescription}>
+                Discover my favorite things, dreams, and wishes. Let's turn
+                imagination into reality together.
               </div>
-              <div className="cKTRE">
+              <Link href="https://ponnle.xyz" target="_blank">
+                <div className={classes.profileDescription}>
+                  https://ponnle.xyz
+                </div>
+              </Link>
+              {/* <div className="cKTRE">
                 <div className="F_5sH">
                   <div className="EvQHG">
                     <div className="MXkxY">
@@ -70,7 +74,7 @@ const ProfileDetails = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
